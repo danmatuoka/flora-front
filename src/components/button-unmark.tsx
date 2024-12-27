@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client'
 
 import { Button } from "./ui/button"
@@ -9,7 +10,7 @@ type ButtonUnmarkProps = {
 }
 
 export const ButtonUnmark = ({ word, limit }: ButtonUnmarkProps) => {
-  const handleUnmark = async (e) => {
+  const handleUnmark = async () => {
     await bookmark(word, 'DELETE')
   }
   return (

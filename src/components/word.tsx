@@ -55,7 +55,7 @@ export function Word({ word, isFavorite }: WordProps) {
 					<p>
 						Origin{" "}
 					</p>
-					<a href={word.sourceUrls}>
+					<a href={word.sourceUrls[0]}>
 						<p>
 							{word.sourceUrls}
 						</p>

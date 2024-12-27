@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 'use server'
 
@@ -9,7 +10,7 @@ import { LoginFormSchema } from "../../lib/LoginFormSchema";
 import 'dotenv/config'
 import { BASE_URL, PATHS } from "./_constants";
 
-export async function signup(state, formData: FormData) {
+export async function signup(state: any, formData: FormData) {
   const cookieStore = await cookies()
   const validatedFields = SignupFormSchema.safeParse({
     username: formData.get('username'),
@@ -42,7 +43,7 @@ export async function signup(state, formData: FormData) {
 
 }
 
-export async function login(state, formData: FormData) {
+export async function login(state: any, formData: FormData) {
   const cookieStore = await cookies()
   const validatedFields = LoginFormSchema.safeParse({
     email: formData.get('email'),

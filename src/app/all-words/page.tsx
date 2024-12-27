@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-asserted-optional-chain */
 import { getAllWords } from "../actions/get-all-words"
 import Link from "next/link";
 import { PaginationCustom } from "~/components/pagination";
@@ -28,9 +29,9 @@ export default async function AllWordsPage({ searchParams }: AllWordPageProps) {
         <PaginationCustom
           page={page}
           limit={limit}
-          totalPages={allWordsResponse?.totalPages}
-          hasNext={allWordsResponse?.hasNext}
-          hasPrev={allWordsResponse?.hasPrev}
+          totalPages={allWordsResponse?.totalPages!}
+          hasNext={allWordsResponse?.hasNext!}
+          hasPrev={allWordsResponse?.hasPrev!}
           path="allWords"
         />
       </div>
